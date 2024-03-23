@@ -5,7 +5,7 @@ const {getCustomers,
   getCustomer,
   deleteCustomer,
   updateCustomer,
-  addCustomer} = require("../controllers/customers.js");
+  addCustomer} = require("../controllers/customer.controller.js");
 
 //get all
 router.get("/", getCustomers);
