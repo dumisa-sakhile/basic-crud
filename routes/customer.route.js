@@ -7,20 +7,15 @@ const {getCustomers,
   updateCustomer,
   addCustomer} = require("../controllers/customer.controller.js");
 
-//get all
-router.get("/", getCustomers);
 
-//get one
-router.get("/:id", getCustomer);
+router.route("/")
+.post(addCustomer)
+.get(getCustomers);
 
-//create
-router.post("/", addCustomer);
-
-//update
-router.patch("/:id", updateCustomer);
-
-//delete
-router.delete("/:id", deleteCustomer);
-
+router
+  .route("/:id")
+  .get(getCustomer)
+  .delete(deleteCustomer)
+  .patch(updateCustomer);
 
 module.exports = router;
